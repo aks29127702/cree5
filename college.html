@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Admin Panel — SAHAYAK</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="college.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-box">SAHAYAK<span class="dot"></span></span>
+        </div>
+        <nav class="nav-links">
+          <a class="active"href="college.html">Home</a>
+          <a  href="#">College</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <span id="college-identity" class="identity"></span>
+          <button id="college-logout" class="btn btn-light">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">College Admin Dashboard</h1>
+        <p class="hero-subtitle">Manage users, alerts, incidents, and tickets.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <main class="college-layout">
+      <!-- Left navigation -->
+      <aside class="card sidebar">
+        <h2 class="card-title">Navigation</h2>
+        <ul class="menu">
+          <li><a href="#" class="menu-link" data-action="manage-users">Manage users</a></li>
+          <li><a href="#" class="menu-link" data-action="view-user-data">View user data</a></li>
+          <li><a href="#" class="menu-link" data-action="view-leaderboard">View leaderboard</a></li>
+          <li><a href="#" class="menu-link" data-action="emergency-contacts">Emergency contacts</a></li>
+          <li><a href="#" class="menu-link" data-action="send-alerts">Send alerts</a></li>
+          <li><a href="#" class="menu-link" data-action="report-incident">Report incident</a></li>
+          <li><a href="#" class="menu-link" data-action="manage-tickets">Manage tickets</a></li>
+        </ul>
+      </aside>
+
+      <!-- Right grid with four action cards -->
+      <div class="college-grid">
+        <section class="right">
+          <div class="card action" data-action="send-alerts">
+            <h3>Send Alerts</h3>
+            <button class="btn btn-primary">Open</button>
+          </div>
+          <div class="card action" data-action="contacts">
+            <h3>Emergency Contacts</h3>
+            <button class="btn btn-primary">Open</button>
+          </div>
+          <div class="card action" data-action="manage-tickets">
+            <h3>Manage Tickets</h3>
+            <button class="btn btn-primary">Open</button>
+          </div>
+          <div class="card action" data-action="report-incident">
+            <h3>Report Incident</h3>
+            <button class="btn btn-primary">Open</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Chat widget -->
+    <section id="chat-college" class="chat-widget" aria-live="polite" hidden>
+      <header class="chat-header">
+        <span>Chat with Student</span>
+        <button id="chat-close-college" class="modal-close" title="Close">×</button>
+      </header>
+      <div id="chat-messages-college" class="chat-messages"></div>
+      <form id="chat-form-college" class="chat-form">
+        <input id="chat-input-college" class="chat-input" type="text" placeholder="Type a message…" autocomplete="off" />
+        <button class="btn btn-primary chat-send" type="submit">Send</button>
+      </form>
+    </section>
+
+    <script src="realtime.js"></script>
+    <script src="college.js"></script>
+  </body>
+  </html>
+
+

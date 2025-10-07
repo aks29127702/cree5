@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESCUE.AI — Login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-box">SAHAYAK<span class="dot"></span></span>
+        </div>
+        <nav class="nav-links">
+          <a id="home-link" class="requires-auth" href="emeregency%20alert%20System.html">Home</a>
+          <a id="alerts-link" class="requires-auth" href="aks.html">Alerts</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-light" disabled>Sign in</button>
+          <button class="btn btn-primary" disabled title="Registration disabled for now">Register</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Welcome Banner -->
+    <section class="hero login-hero">
+      <div class="container">
+        <h1 class="hero-title welcome-title">WELCOME</h1>
+      </div>
+    </section>
+
+    <!-- Content: Left message + Right login card -->
+    <main class="container grid login-main">
+      <section>
+        <div class="sahayak-wrap">
+          <h2 class="sahayak-title">SAHAYAK</h2>
+          <p class="sahayak-tag">Disaster preparedness starts with you.</p>
+        </div>
+      </section>
+
+      <section class="card login-card" aria-labelledby="login-title">
+        <h2 id="login-title" class="card-title">Login</h2>
+        <form id="login-form" class="form">
+          <label class="label" for="login-username">Email</label>
+          <input id="login-username" name="username" class="input" type="email" placeholder="email@example.com" required />
+
+          <label class="label" for="login-password">Password</label>
+          <input id="login-password" name="password" class="input" type="password" placeholder="Password" required />
+
+          <label class="label" for="login-role">Please enter your role</label>
+          <select id="login-role" name="role" class="input" required>
+            <option value="" selected disabled>Select role</option>
+            <option>Students</option>
+            <option>Gaurdians</option>
+            <option>parents</option>
+            <option>Staff</option>
+            <option>Colledge admin</option>
+            <option>admin</option>
+          </select>
+
+          <div class="forgot-link">
+            <a href="#" style="color: inherit; text-decoration: none;">Forgot your password?</a>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="login.js"></script>
+  </body>
+  </html>
+
+

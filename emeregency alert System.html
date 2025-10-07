@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESCUE.AI — Emergency Alert System</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-box">RESCUE<span class="dot">.AI</span></span>
+        </div>
+        <nav class="nav-links">
+          <a href="www.youtube.com">Home</a>
+          <a href="#">News</a>
+          <a class="active" href="aks.html">Alerts</a>
+          <a href="#">Contact</a>
+          <a href="#">akss</a>
+          <a href="#">aksddds</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-light">Sign in</button>
+          <button class="btn btn-primary">Register</button>
+          <button id="logout-btn" class="btn btn-light" title="Clear login and go to Login">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Emergency Alert System</h1>
+        <p class="hero-subtitle">
+          Report and monitor emergencies in real-time. All alerts are shared with
+          emergency response teams.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container grid">
+      <!-- Left: Form Card -->
+      <section class="card">
+        <h2 class="card-title">Create Emergency Alert</h2>
+
+        <form id="alert-form" class="form">
+          <label class="label" for="location">Location</label>
+          <input id="location" name="location" class="input" type="text" placeholder="Enter affected location" />
+
+          <label class="label" for="severity">Severity Level</label>
+          <select id="severity" name="severity" class="input">
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+            <option>Critical</option>
+          </select>
+
+          <label class="label" for="details">Emergency Details</label>
+          <textarea id="details" name="details" class="input textarea" placeholder="Describe the emergency situation in detail"></textarea>
+
+          <label class="label" for="contact">Contact (optional)</label>
+          <input id="contact" name="contact" class="input" type="text" placeholder="Your name or phone" />
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Alert</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Right: Map Card -->
+      <section class="card">
+        <h2 class="card-title">Emergency Alerts Map</h2>
+        <div id="map" class="map"></div>
+      </section>
+    </main>
+
+    <!-- Floating Location Button -->
+    <button id="locate-btn" class="floating-action">Track My Location</button>
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+

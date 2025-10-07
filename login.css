@@ -1,0 +1,21 @@
+.login-hero { padding: 120px 0 12px 0; }
+.login-main {
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  min-height: calc(100vh - 160px);
+}
+.sahayak-wrap { padding: 250px 60px 280px 0px; }
+.sahayak-title { margin: 0 0 8px 0; font-weight: 900; font-size: 80px; letter-spacing: 1px; }
+.sahayak-tag { margin: 0; line-height: 1.8; font-size: 18px; color: #374151; }
+.login-card { padding: 28px; }
+.login-card .input { padding: 14px 14px; font-size: 16px; }
+.login-card .form-actions { margin-top: 12px; }
+.welcome-title { letter-spacing: 2px; }
+.forgot-link { font-size: 12px; color: #6b7280; margin-top: 4px; }
+
+@media (max-width: 991px) {
+  .login-main { grid-template-columns: 1fr; min-height: auto; align-items: start; }
+  .sahayak-title { font-size: 40px; }
+}
+
+

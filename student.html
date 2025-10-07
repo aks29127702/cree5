@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Panel — SAHAYAK</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="student.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-box">SAHAYAK<span class="dot"></span></span>
+        </div>
+        <nav class="nav-links">
+          <a class="active" href="student.html">Home</a>
+          <a  href="#">Student</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <span id="student-identity" class="identity"></span>
+          <button id="student-logout" class="btn btn-light">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Title -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Student Panel</h1>
+        <p class="hero-subtitle">Welcome. Manage SOS, alerts and your profile.</p>
+      </div>
+    </section>
+
+    <!-- Main layout: left sidebar + content -->
+    <main class="student-layout">
+      <!-- Sidebar navigation -->
+      <aside class="card sidebar">
+        <h2 class="card-title">Navigation</h2>
+        <nav class="side-nav">
+          <button class="btn btn-light nav-button" id="nav-learn-news">Learn Now</button>
+          <button class="btn btn-light nav-button" id="nav-virtual-drills">Virtual Drills</button>
+          <button class="btn btn-light nav-button" id="nav-test-learning">Test Your Learning</button>
+          <button class="btn btn-light nav-button" id="nav-leaderboard">Leaderboard</button>
+        </nav>
+      </aside>
+
+      <!-- Content area -->
+      <div class="student-grid">
+        <!-- Left column: SOS Ticket placeholder -->
+        <section class="card column">
+          <h2 class="card-title">SOS Ticket</h2>
+          <div class="placeholder">
+            <p>Create or view your SOS ticket here.</p>
+            <button class="btn btn-primary" id="create-sos">Create SOS</button>
+          </div>
+        </section>
+
+        <!-- Right column: split into Alerts (top) and Profile (bottom) -->
+        <section class="right-column">
+          <div class="card block">
+            <h2 class="card-title">Alerts</h2>
+            <div class="placeholder">
+              <p>Latest alerts will show here.</p>
+              <button class="btn btn-light" id="refresh-alerts">Refresh</button>
+            </div>
+          </div>
+          <div class="card block">
+            <h2 class="card-title">Profile</h2>
+            <div class="placeholder">
+              <p>Basic profile details. Complete your info soon.</p>
+              <button class="btn btn-light" id="edit-profile">Edit</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Chat widget -->
+    <section id="chat-student" class="chat-widget" aria-live="polite" hidden>
+      <header class="chat-header">
+        <span>Chat with College Admin</span>
+        <button id="chat-close-student" class="modal-close" title="Close">×</button>
+      </header>
+      <div id="chat-messages-student" class="chat-messages"></div>
+      <form id="chat-form-student" class="chat-form">
+        <input id="chat-input-student" class="chat-input" type="text" placeholder="Type a message…" autocomplete="off" />
+        <button class="btn btn-primary chat-send" type="submit">Send</button>
+      </form>
+    </section>
+
+    <script src="realtime.js"></script>
+    <script src="student.js"></script>
+  </body>
+  </html>
+
+

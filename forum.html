@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESCUE.AI — Complete your profile</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="forum.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-box">SAHAYAK<span class="dot"></span></span>
+        </div>
+        <nav class="nav-links">
+          <a class="requires-auth" href="emeregency%20alert%20System.html">Home</a>
+          <a class="requires-auth" href="aks.html">Alerts</a>
+          <a href="#">Contact us</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-light">Profile</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner line for spacing like sketch -->
+    <section class="hero forum-hero">
+      <div class="container">
+        <h1 class="hero-title forum-title">Complete your profile</h1>
+      </div>
+    </section>
+
+    <!-- Centered card form -->
+    <main class="container forum-main">
+      <section class="card forum-card" aria-labelledby="profile-title">
+        <h2 id="profile-title" class="card-title" style="text-align:center">Profile</h2>
+
+        <form id="profile-form" class="form">
+          <label class="label" for="name">Name *</label>
+          <input id="name" name="name" class="input" type="text" placeholder="Full name" required />
+
+          <label class="label" for="dob">Date of Birth *</label>
+          <input id="dob" name="dob" class="input" type="date" required />
+
+          <label class="label" for="gender">Gender *</label>
+          <select id="gender" name="gender" class="input" required>
+            <option value="" disabled selected>Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+            <option>Prefer not to say</option>
+          </select>
+
+          <label class="label" for="aadhaar">Aadhaar ID</label>
+          <input id="aadhaar" name="aadhaar" class="input" type="text" inputmode="numeric" pattern="\d{12}" placeholder="12-digit Aadhaar (optional)" />
+
+          <label class="label" for="phone">Phone Number</label>
+          <input id="phone" name="phone" class="input" type="tel" inputmode="numeric" placeholder="Phone number" />
+
+          <label class="label" for="city">City *</label>
+          <input id="city" name="city" class="input" type="text" placeholder="City" required />
+
+          <label class="label" for="state">State *</label>
+          <input id="state" name="state" class="input" type="text" placeholder="State" required />
+
+          <label class="label" for="institution">Institution *</label>
+          <input id="institution" name="institution" class="input" type="text" placeholder="Institution" required />
+
+          <label class="label" for="course">Class / Course *</label>
+          <input id="course" name="course" class="input" type="text" placeholder="Class or Course" required />
+
+          <label class="label" for="guardianEmail">Guardian's Email *</label>
+          <input id="guardianEmail" name="guardianEmail" class="input" type="email" placeholder="guardian@example.com" required />
+
+          <div class="form-actions" style="justify-content:center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="forum.js"></script>
+  </body>
+  </html>
+
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Government Admin Panel — SAHAYAK</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="government.css" />
+  </head>
+  <body>
+    <!-- Top Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-box">SAHAYAK<span class="dot"></span></span>
+        </div>
+        <nav class="nav-links">
+          <a class="active" href="government.html">Home</a>
+          <a href="#">Alerts</a>
+          <a href="#">Contact us</a>
+        </nav>
+        <div class="nav-actions">
+          <span id="gov-identity" class="identity"></span>
+          <button id="gov-logout" class="btn btn-light">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Title (match other panels) -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Admin Dashboard</h1>
+        <p class="hero-subtitle">Overview, leaderboards and controls.</p>
+      </div>
+    </section>
+
+    <!-- Main Layout: Sidebar + Content -->
+    <div class="gov-layout">
+      <!-- Sidebar (left) -->
+      <aside class="sidebar card">
+        <h2 class="card-title">Navigation</h2>
+        <ul class="menu">
+          <li><a href="#" id="manage-users-link" class="menu-link">Manage Users</a></li>
+          <li><a href="#" class="menu-link">View Leaderboard</a></li>
+          <li><a href="#" class="menu-link">Forecasts</a></li>
+          <li><a href="#" class="menu-link">Emergency</a></li>
+          <li><a href="#" class="menu-link">Contacts</a></li>
+          <li><a href="#" class="menu-link">Reports</a></li>
+          <li><a href="#" class="menu-link">Settings</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content (right) -->
+      <main class="content">
+        <!-- Stats cards row -->
+        <section class="stats-row">
+          <div class="stat card">
+            <div class="stat-title">Total Colleges</div>
+            <div class="stat-value" id="stat-colleges">128</div>
+          </div>
+          <div class="stat card">
+            <div class="stat-title">Total Users Registered</div>
+            <div class="stat-value" id="stat-users">2340</div>
+          </div>
+          <div class="stat card">
+            <div class="stat-title">Total Alerts</div>
+            <div class="stat-value" id="stat-alerts">456</div>
+          </div>
+        </section>
+
+        <!-- Leaderboard table -->
+        <section class="card">
+          <h2 class="card-title">College Leaderboard</h2>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>College Name</th>
+                  <th>Users</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboard-body">
+                <tr>
+                  <td>1</td>
+                  <td>ABC College</td>
+                  <td>1,280</td>
+                  <td>98</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Sunrise Institute</td>
+                  <td>1,010</td>
+                  <td>86</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Global University</td>
+                  <td>940</td>
+                  <td>79</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Manage Users Modal (adds/edits/deletes college/school login accounts) -->
+    <div id="manage-users-backdrop" class="modal-backdrop" hidden style="display: none;"></div>
+    <div id="manage-users-modal" class="modal" hidden aria-labelledby="manage-users-title" role="dialog" aria-modal="true" style="display: none;">
+      <section class="modal-card" style="max-width: 860px;">
+        <header class="modal-header">
+          <h2 id="manage-users-title" class="modal-title">Manage Users</h2>
+          <button id="close-manage-users" class="modal-close" aria-label="Close">×</button>
+        </header>
+
+        <!-- Actions row: Add user (form to be added later) -->
+        <div class="modal-actions" style="display:flex; justify-content: space-between; align-items:center; margin-bottom: 10px;">
+          <p style="margin:0; color:#6b7280;">Create and manage college/school login accounts.</p>
+          <button id="add-user-btn" class="btn btn-primary">+ Add User</button>
+        </div>
+
+        <!-- Existing users table (static demo data for now) -->
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>College/School Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th style="text-align:right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="manage-users-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- Footer note -->
+        <div style="margin-top:10px; color:#9ca3af; font-size:12px;">Edit form and Add User form will be integrated later.</div>
+      </section>
+    </div>
+
+    <!-- Add User Modal -->
+    <div id="add-user-backdrop" class="modal-backdrop" hidden style="display: none;"></div>
+    <div id="add-user-modal" class="modal" hidden aria-labelledby="add-user-title" role="dialog" aria-modal="true" style="display: none;">
+      <section class="modal-card" style="max-width: 720px;">
+        <header class="modal-header">
+          <h2 id="add-user-title" class="modal-title">Add User</h2>
+          <button id="close-add-user" class="modal-close" aria-label="Close">×</button>
+        </header>
+
+        <form id="add-user-form" class="form">
+          <label class="label" for="au-name">Institution / School Name</label>
+          <input id="au-name" name="name" class="input" type="text" placeholder="Enter institution name" required />
+
+          <label class="label" for="au-email">Email</label>
+          <input id="au-email" name="email" class="input" type="email" placeholder="example@gmail.com" required />
+
+          <label class="label" for="au-password">Password</label>
+          <input id="au-password" name="password" class="input" type="text" placeholder="Set a password" required />
+
+          <label class="label" for="au-mobile">Mobile No.</label>
+          <input id="au-mobile" name="mobile" class="input" type="tel" placeholder="+91..." />
+
+          <label class="label" for="au-code">Institution / School Code</label>
+          <input id="au-code" name="code" class="input" type="text" placeholder="e.g., CLG-001" />
+
+          <div class="form-actions" style="justify-content: space-between;">
+            <button type="button" id="add-user-reset" class="btn btn-light">Reset</button>
+            <div>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <script src="realtime.js"></script>
+    <script src="government.js"></script>
+  </body>
+  </html>
+
+

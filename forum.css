@@ -1,0 +1,24 @@
+.forum-hero { padding: 24px 0 12px 0; }
+.forum-title { text-align: center; letter-spacing: 1px; }
+
+.forum-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 24px 0 48px 0;
+}
+
+.forum-card {
+  width: 100%;
+  max-width: 520px;
+}
+
+.forum-card .input {
+  height: 44px;
+}
+
+.form .input[type="date"] {
+  height: 44px;
+}
+
+
